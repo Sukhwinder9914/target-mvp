@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-test-deploy:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,6 +17,3 @@ jobs:
 
       - name: Run Unit Tests
         run: pytest || echo "No tests found"
-
-      - name: Build Docker Image
-        run: docker build -t target-inventory-app .
